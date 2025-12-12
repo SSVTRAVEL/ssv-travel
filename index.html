@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
             top: 0;
             z-index: 1000;
             background: white;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -93,14 +94,19 @@
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: moveBackground 20s linear infinite;
         }
 
         @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
         .hero-content {
@@ -127,6 +133,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -144,12 +151,12 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease 0.4s backwards;
-            box-shadow: 0 5px 15px rgba(217,75,75,0.3);
+            box-shadow: 0 5px 15px rgba(217, 75, 75, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(217,75,75,0.4);
+            box-shadow: 0 8px 25px rgba(217, 75, 75, 0.4);
             background: #c43d3d;
         }
 
@@ -178,14 +185,14 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             text-align: center;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
@@ -197,6 +204,155 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #d94b4b;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .gallery-slider {
+            max-width: 1200px;
+            margin: 3rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .slide-content {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #d94b4b;
+            z-index: 10;
+        }
+
+        .slider-nav:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #d94b4b;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            align-items: center;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d94b4b;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(217, 75, 75, 0.15);
         }
 
         /* About Section */
@@ -262,7 +418,7 @@
         }
 
         .contact-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -270,7 +426,7 @@
         }
 
         .contact-item:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-5px);
         }
 
@@ -308,6 +464,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -316,6 +473,8 @@
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#partenaires">Partenaires</a></li>
                 <li><a href="#apropos">À Propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -338,11 +497,12 @@
             <div class="service-card">
                 <div class="service-icon">✈️</div>
                 <h3>Billets d'Avion</h3>
-                <p>Réservation de vols aux meilleurs tarifs pour toutes destinations. Vols domestiques et internationaux.</p>
+                <p>Réservation de vols aux meilleurs tarifs pour toutes destinations. Vols domestiques et
+                    internationaux.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🏨</div>
-                <h3>Réservation d'hôtels</h3>
+                <h3>Hébergement</h3>
                 <p>Sélection d'hôtels et résidences pour votre confort, adaptés à tous les budgets.</p>
             </div>
             <div class="service-card">
@@ -362,8 +522,101 @@
             </div>
             <div class="service-card">
                 <div class="service-icon">🎒</div>
-                <h3>Voyages sur Mesure && Assurances voyage</h3>
+                <h3>Voyages sur Mesure</h3>
                 <p>Conception de voyages personnalisés selon vos envies et votre budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="realisations" class="gallery">
+        <h2 class="section-title">Nos Réalisations</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Découvrez quelques moments de voyages
+            inoubliables organisés par SSV Travel</p>
+
+        <div class="gallery-slider">
+            <button class="slider-nav prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-nav next" onclick="changeSlide(1)">❯</button>
+
+            <div class="slides-container" id="slidesContainer">
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=500&fit=crop');">
+                    <div class="slide-content">
+                        <h3>🏖️ Séjour aux Maldives</h3>
+                        <p>Un voyage paradisiaque pour nos clients en juillet 2024</p>
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&h=500&fit=crop');">
+                    <div class="slide-content">
+                        <h3>🗼 Paris en Famille</h3>
+                        <p>Circuit culturel organisé pour un groupe de 15 personnes</p>
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1200&h=500&fit=crop');">
+                    <div class="slide-content">
+                        <h3>🕌 Découverte du Maroc</h3>
+                        <p>Tour organisé à travers les villes impériales</p>
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&h=500&fit=crop');">
+                    <div class="slide-content">
+                        <h3>🏔️ Aventure en Suisse</h3>
+                        <p>Escapade alpine avec activités en montagne</p>
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=500&fit=crop');">
+                    <div class="slide-content">
+                        <h3>🌴 Safari au Kenya</h3>
+                        <p>Expédition nature et découverte de la faune africaine</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-dots" id="dotsContainer"></div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partenaires" class="partners">
+        <h2 class="section-title">Ils Nous Font Confiance</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Nos partenaires et clients satisfaits</p>
+
+        <div class="partners-grid">
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/af.png" alt="Air France Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div>
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/Brussels-Airlines-Logo.png" alt="Brussels Airlines Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div>
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/Turkish_Airlines_logo_2019_compact.svg.png" alt="Turkish Airlines Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div>
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/ethiopian-airlines-logo-png-transparent.png" alt="Ethiopian Airlines Logo"
+                    style="height: 100px; width: 100px; margin-right: 10px; align-self: center;">
+            </div>
+            <!-- <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/Logo_Royal_Air_Maroc.png" alt="Air France Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div> -->
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/ASKY_Airlines_logo.png" alt="Asky Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div>
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/EgyptAir-Logo.png" alt="Egypt Air Logo"
+                    style="height: 50px; margin-right: 10px; align-self: center;">
+            </div>
+            <div class="partner-card" style="justify-content: center; align-items: center;">
+                <img src="./assets/images/RwandAir_Logotype.png" alt="RwandAir Logo"
+                    style="height: 50px; width: 100px; margin-right: 10px; align-self: center;">
             </div>
         </div>
     </section>
@@ -373,9 +626,12 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>À Propos de SSV Travel</h2>
-                <p>SSV Travel est votre agence de voyage de confiance, spécialisée dans la vente de billets d'avion et l'organisation de voyages inoubliables.</p>
-                <p>Avec des années d'expérience dans le domaine du tourisme, nous nous engageons à vous offrir les meilleurs services au meilleur prix.</p>
-                <p>Notre équipe passionnée est à votre écoute pour réaliser vos rêves de voyage et vous accompagner à chaque étape de votre aventure.</p>
+                <p>SSV Travel est votre agence de voyage de confiance, spécialisée dans la vente de billets d'avion et
+                    l'organisation de voyages inoubliables.</p>
+                <p>Avec des années d'expérience dans le domaine du tourisme, nous nous engageons à vous offrir les
+                    meilleurs services au meilleur prix.</p>
+                <p>Notre équipe passionnée est à votre écoute pour réaliser vos rêves de voyage et vous accompagner à
+                    chaque étape de votre aventure.</p>
             </div>
             <div class="about-image">
                 🌍
@@ -412,6 +668,49 @@
     </footer>
 
     <script>
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Create dots
+        const dotsContainer = document.getElementById('dotsContainer');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slidesContainer = document.getElementById('slidesContainer');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -436,4 +735,5 @@
         });
     </script>
 </body>
+
 </html>
